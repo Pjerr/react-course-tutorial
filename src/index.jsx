@@ -5,10 +5,10 @@ import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 import { MainContent } from "./components/main-content";
 
-class Page extends React.Component {
+class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="wrapper">
         <Header />
         <MainContent />
         <Footer />
@@ -18,4 +18,4 @@ class Page extends React.Component {
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Page />);
+root.render(<App />);
