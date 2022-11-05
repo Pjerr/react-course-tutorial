@@ -7,13 +7,16 @@ export class Card extends React.Component {
   render() {
     return (
       <div className="card">
+        {this.props.openSpots === 0 && (
+          <div className="card-badge">SOLD OUT</div>
+        )}
         <img src={pic} alt="card-pic" className="card-picture"></img>
         <div className="star-rating">
           <FontAwesomeIcon className="font-awesome-icon" icon={faStar} />
           <span>{this.props.rating}</span>
         </div>
         <div className="card-content">
-          <h4 className="card-title">Lessons from {this.props.name}</h4>
+          <h4 className="card-title">Lessons from {this.props.firstName}</h4>
           <p className="card-price">Price goes here</p>
         </div>
       </div>
