@@ -30,7 +30,7 @@ class App extends React.Component {
       <Card key={person.id} {...person} darkMode={this.state.darkMode} />
     ));
     return (
-      <div className="app" id="light">
+      <div className="app">
         <Navbar
           darkMode={this.state.darkMode}
           toggleDarkMode={this.handleToggleDarkMode}

@@ -8,6 +8,9 @@ body {
   margin: 0;
 }
 
+.app {
+  height: 100%;
+}
 .navbar {
   height: 100px;
   display: flex;
@@ -40,8 +43,8 @@ body {
   display: flex;
   flex-direction: column;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  margin-left: 4rem;
   position: relative;
+  margin: 3rem 1rem 0rem 1rem;
 }
 .card-picture {
   width: 100px;
@@ -56,6 +59,7 @@ body {
 
 .card-section {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .card-badge {
@@ -139,4 +143,5 @@ input:checked + .slider:before {
 .dark {
   background-color: #202023;
   color: white;
+  border-color: white;
 }
