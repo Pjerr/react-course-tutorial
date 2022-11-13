@@ -8,12 +8,32 @@ import { Card } from "./components/card";
 import "./libraries/font-awesome";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      darkMode: false,
+    };
+
+    this.handleToggleDarkMode = this.handleToggleDarkMode.bind(this);
+  }
+
+  handleToggleDarkMode(event) {
+    const { name, value, type, checked } = event.target;
+    this.setState({ [name]: type === "checkbox" ? checked : value }, () =>
+      console.log(this.state.darkMode)
+    );
+  }
+
   render() {
     const data = dataFile.map((person) => <Card key={person.id} {...person} />);
     return (
-      <div className="wrapper">
-        <Navbar />
-        <Hero />
+      <div className="app" id="light">
+        <Navbar
+          darkMode={this.state.darkMode}
+          toggleDarkMode={this.handleToggleDarkMode}
+        />
+        <Hero darkMode={this.state.darkMode} />
         <div className="card-section">{data}</div>
       </div>
     );
