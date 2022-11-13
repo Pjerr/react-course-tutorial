@@ -26,7 +26,9 @@ class App extends React.Component {
   }
 
   render() {
-    const data = dataFile.map((person) => <Card key={person.id} {...person} />);
+    const data = dataFile.map((person) => (
+      <Card key={person.id} {...person} darkMode={this.state.darkMode} />
+    ));
     return (
       <div className="app" id="light">
         <Navbar
@@ -34,7 +36,13 @@ class App extends React.Component {
           toggleDarkMode={this.handleToggleDarkMode}
         />
         <Hero darkMode={this.state.darkMode} />
-        <div className="card-section">{data}</div>
+        <div
+          className={
+            this.state.darkMode ? "card-section dark" : "card-section light"
+          }
+        >
+          {data}
+        </div>
       </div>
     );
   }

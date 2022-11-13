@@ -135,3 +135,8 @@ input:checked + .slider:before {
   display: flex;
   align-items: center;
 }
+
+.dark {
+  background-color: #202023;
+  color: white;
+}

@@ -13,7 +13,7 @@ export class Navbar extends React.Component {
 
   render() {
     return (
-      <nav className="navbar">
+      <nav className={this.props.darkMode ? "navbar dark" : "navbar light"}>
         <img src={logo} alt="logo" className="logo"></img>
         <div className="darkModeButton">
           <label>Light</label>

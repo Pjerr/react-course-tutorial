@@ -6,9 +6,15 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 export class Card extends React.Component {
   render() {
     return (
-      <div className="card">
+      <div className={this.props.darkMode ? "card dark" : "card light"}>
         {this.props.openSpots === 0 && (
-          <div className="card-badge">SOLD OUT</div>
+          <div
+            className={
+              this.props.darkMode ? "card-badge dark" : "card-badge light"
+            }
+          >
+            SOLD OUT
+          </div>
         )}
         <img src={pic} alt="card-pic" className="card-picture"></img>
         <div className="star-rating">
